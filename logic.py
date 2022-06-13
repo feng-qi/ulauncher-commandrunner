@@ -28,7 +28,7 @@ class CommandList:
 		self._names = set(filter(bool, value))
 
 	def search(self, word):
-		search_fn = lambda command: command.startswith(word)
+		search_fn = lambda command: word in command
 		result = list(filter(search_fn, self.items))
 		result.sort(key = lambda command: len(command))
 		return result
